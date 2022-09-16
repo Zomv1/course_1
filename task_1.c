@@ -1,23 +1,18 @@
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <windows.h>
 #include <string.h>
 #define MAXLINE 1000
 int main()
 {
-    system("chcp 1251");
     double r, a, d;   // r - радиус круга, a - длина стороны квадрата, d - диаметр квадрата
-    char r_str[MAXLINE], a_str[MAXLINE],temp[MAXLINE]; // r_str, a_str - Вводимые строки для переменных r и а | temp - переменная которая будет временно нужны позже
+    char r_str[MAXLINE], a_str[MAXLINE],temp[MAXLINE], r_temp[MAXLINE]; // r_str, a_str - Вводимые строки для переменных r и а | temp - переменная которая будет временно нужны позже
     int i, str_pos,flag; // i - для использования в циклах | str_pos - значение индекса элемента '(' для определения корня, flag - временный флаг
     flag = 0;
     printf("Введите длину стороны квадрата - ");
     scanf("%s", a_str);
     printf("\nВведите радиус круга - ");
-    scanf("%s", &r_str);
-
-    printf("\n d = %lf", d);
-    printf("\n r = %s", a_str);
+    scanf("%s", r_str);
     printf("\n\n");
 
     str_pos = strchr(a_str, '(')-a_str+1;  // Ищем индекс '('
@@ -28,9 +23,9 @@ int main()
     else if(str_pos > 5){
         memmove(a_str, a_str, strlen(a_str)-1); // Удаляем закрывающую ')'
         for(i = 0; i<str_pos-1;i++) {
-            a_temp[i] = a_str[str_pos+i];  // Формируем временную строку в которою запишем значение корня
+            temp[i] = a_str[str_pos+i];  // Формируем временную строку в которою запишем значение корня
         }
-        a = atof(a_str)*sqrt(atof(a_temp)); // Конвертируем строки в double(получим все до '*') и умножаем на корень
+        a = atof(a_str)*sqrt(atof(temp)); // Конвертируем строки в double(получим все до '*') и умножаем на корень
     }
 
     // Тоже самое для значения радиуса
@@ -65,6 +60,5 @@ int main()
     else // Если же радиус больше стороны квадрата, то очевидно
         printf("Квадрат в круге, но не вписан");
     printf("\n");
-    system("pause");
     return 0;
 }
