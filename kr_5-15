@@ -1,36 +1,40 @@
 #include <stdlib.h>
 #include <math.h>
 #include <stdio.h>
-#include <string.h>
+#include <Windows.h>
 
 void main() {
+	system("chcp 1251");
 	int a[1000], i = 0, j = 0, kol = 0, maxkol, maxnum;
-	double num;
+	double n;
 	do {
-		printf("\nВведите элемент массива - %i", i);
-		scanf_s("%lf", $num);
-		a[i] = num;
+		printf("\nВведите %i элемент массива - ", i);
+		scanf_s("%lf", $n);
+		a[i] = round(n);
 		i++;
-	}while (num == float(num))
+	} while (round(n) == n);
 
-	int b[i - 1];
-	for (i = i-1; i > 0; i--) {
+	int b[1000];
+
+	for (i = i - 1; i > 0; i--) {
 		b[j] = a[i];
 		j++;
 	}
-	b = xor(b);
 
+	maxkol = b[0];
 	for (i = 0; i < j - 1; i++) {
 		kol = 0;
-		while (b[i] == b[i + 1] && i < j - 1) {
-			kol++;
-			if (kol > maxkol) {
-				maxkol = kol;
-				maxnum = b[i];
+		for (int k = i+1; k < j - 1; k++) {
+			if (b[i] == b[k]) {
+				kol++;
 			}
+		}
+		if (kol > maxkol) {
+			maxkol = kol;
+			maxnum = b[i];
 		}
 	}
 
-	printf("\n Самое больше число %i встретилось %i раз.", maxnum, naxkol);
+	printf("\n Самое больше число %i встретилось %i раз.", maxnum, maxkol);
 	return;
 }
