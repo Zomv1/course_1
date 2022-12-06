@@ -1,0 +1,30 @@
+#include <math.h>
+#include <stdio.h>
+#include <stdlib.h>
+// Задача 4-КР2
+int main()
+{
+    int k = 2;
+    printf("\n = %i", k);
+    k += 2;
+    printf("\n += %i", k);
+    k -= 2;
+    printf("\n -= %i", k);
+    k *= 3;
+    printf("\n *= %i", k);
+    k /= 2;
+    printf("\n /= %i", k);
+    k %= 2;
+    printf("\n %= %i", k);
+    k <<= 2;
+    printf("\n <<= %i", k);
+    k >>= 2;
+    printf("\n >>= %i", k);
+    k &= 2;
+    printf("\n &= %i", k);
+    k != 2;
+    printf("\n != %i", k);
+    k ^= 2;
+    printf("\n ^= %i", k);
+    return 0;
+}
