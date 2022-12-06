@@ -7,9 +7,9 @@ int main()
     int b;
     double a, x, y;
     printf("Введите x, a и b через пробел соотвественно:");
-    scanf("%lf %lf %i", &x, &a, &b);
+    scanf_s("%lf %lf %i", &x, &a, &b);
     if(a * x <= 0 || a * x == 1) {
-        printf("Функция не опередлена");
+        printf("Функция не определена");
     }
     else {
         y = logf(pow(3 + b * x, 3)) / logf(a * x);
