@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-// ДЗ3_3
+// ДЗ_3
 int main()
 {
 	double min_side_1, wardrobe_w, wardrobe_h, wardrobe_l, door_w, door_h;
